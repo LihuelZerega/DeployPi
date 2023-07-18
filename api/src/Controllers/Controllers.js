@@ -50,8 +50,7 @@ const getDBrecipes = async () => {
                 steps: e.steps
             }
         })
-        //const dbRecipes = await Recipe.findAll() //traemos todas la recetas de la base de datos
-        //return dbRecipes
+
     } catch (error) {
         return error
     }
@@ -60,7 +59,7 @@ const getDBrecipes = async () => {
 const getALLRecipes = async () => {
     const apiInfo = await getApiRecipes()
     const dbInfo = await getDBrecipes()
-    const allRecipes = [...dbInfo, ...apiInfo]  //Concatenamos las recetas de la api con las de la base de datos
+    const allRecipes = [...dbInfo, ...apiInfo]  
     return allRecipes
 }
 
