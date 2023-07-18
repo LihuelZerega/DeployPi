@@ -10,7 +10,6 @@ export const GET_DETAILS_BY_ID = "GET_DETAILS_BY_ID";
 export const LIMPIAR_ESTADO_DETAIL = "LIMPIAR_ESTADO_DETAIL";
 
 export function getALLRecipes() {
-  //esta es la accion que le manda al reducer para traer toda la info de las recetas
   return async function (dispatch) {
     const json = await axios("/recipes");
     const recipes = json.data;
@@ -36,7 +35,6 @@ export function orderByHS(payload) {
 }
 
 export function getRecipeByQuery(name) {
-  //esta es la accion que le manda al reducer para buscar el name por query
   return async function (dispatch) {
     try {
       const json = await axios("/recipes?name=" + name);
