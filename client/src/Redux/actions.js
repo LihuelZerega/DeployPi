@@ -12,7 +12,7 @@ export const LIMPIAR_ESTADO_DETAIL = "LIMPIAR_ESTADO_DETAIL";
 
 export function getALLRecipes() {
   return async function (dispatch) {
-    const json = await axios("http://localhost:3001/recipes");
+    const json = await axios("/recipes");
     const recipes = json.data;
     return dispatch({
       type: GET_ALL_RECIPES,
@@ -38,7 +38,7 @@ export function orderByHS(payload) {
 export function getRecipeByQuery(name) {
   return async function (dispatch) {
     try {
-      const json = await axios("http://localhost:3001/recipes?name=" + name);
+      const json = await axios("/recipes?name=" + name);
       return dispatch({
         type: GET_RECIPE_BY_QUERY,
         payload: json.data,
@@ -51,7 +51,7 @@ export function getRecipeByQuery(name) {
 
 export function getDiets() {
   return async function (dispatch) {
-    var json = await axios("http://localhost:3001/diets");
+    var json = await axios("/diets");
     return dispatch({
       type: "GET_DIETS",
       payload: json.data,
@@ -69,7 +69,7 @@ export function filterByTypeDiets(payload) {
 
 export function postRecipe(payload) {
   return async function (dispatch) {
-    const result = await axios.post("http://localhost:3001/recipes", payload);
+    const result = await axios.post("/recipes", payload);
     dispatch({
       type: POST_RECIPE,
       payload: result.data,
@@ -80,7 +80,7 @@ export function postRecipe(payload) {
 
 export function getCardDetails(id) {
     return async function (dispatch) {
-      var json = await axios("http://localhost:3001/recipes/" + id);
+      var json = await axios("/recipes/" + id);
       return dispatch({
         type: GET_DETAILS_BY_ID,
         payload: json.data,
