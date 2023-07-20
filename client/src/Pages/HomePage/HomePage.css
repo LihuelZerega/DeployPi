@@ -136,3 +136,40 @@
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
 }
+
+
+@media only screen and (max-width: 768px) {
+  .NavBar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .FunctionButtons {
+    margin-bottom: 1rem;
+  }
+
+  .Filter {
+    flex-direction: column;
+    align-items: center;
+    margin-right: 0;
+  }
+
+  .OptionFilters,
+  .CreateRecipeButton {
+    margin-top: 1rem;
+    margin-right: 0;
+    background-color: #1e1e1e;
+  }
+
+  .OptionFilters {
+    width: 100%;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
