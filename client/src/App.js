@@ -5,7 +5,7 @@ import CreateRecipe from "./Pages/FormPage/FormPage.jsx";
 import DetailPage from "./Pages/DatailPage/DetailPage.jsx";
 import { Route, Link, Routes } from "react-router-dom";
 import axios from "axios";
-axios.defaults.baseURL = "https://deploypi-production-269c.up.railway.app";
+axios.defaults.baseURL = "https://deploypi-production-2118.up.railway.app";
 
 const App = () => {
   return (
